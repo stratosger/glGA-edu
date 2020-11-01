@@ -61,6 +61,8 @@ glGA libraries and provided examples
 
 1. During the first Visual Studio Code build, assimp may not be detected. In this case, simply try building the project once again.
 2. There have been reports that the command "codesign -f -s - SDL2_mixer", may fail if you try to use it with the latest version of SDL2 mixer. In case that happens, please download and install an older version of SDL2 mixer (for instance: https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-2.0.0.dmg) 
+3. *For MacOS:* Sometimes, when a project is executed for the first time, MacOS may restrict access to SDL2/SDL2_mixer frameworks or assimp dylib. In case that happens, stop the project, navigate to *System Preferences* --> *Security & Privacy* --> *General* tab. Click the "Allow anyway" button in the bottom right of the window, for the cases of SDL2/SDL2_mixer or assimp. Finally, restart Visual Studio Code.
+    *Note:* This procedure may take place many times for each of the above libraries/frameworks.
 
 #### OpenGL Shading Language, Third Edition: https://wiki.labomedia.org/images/1/10/Orange_Book_-_OpenGL_Shading_Language_2nd_Edition.pdf 
 * Chapter9:  Fog simulation
@@ -105,6 +107,15 @@ Software:
 
 * CMake Minimum version required 3.5
 Download the latest one for your platform from : https://cmake.org/download/
+
+*Important:* Make sure cmake is correctly installed to your system.
+Open a terminal and type the following command "cmake -version".
+If the result is the version of CMake you installed, then CMake is correctly installed.
+Otherwise, it is recommended to install CMake through terminal (Mac/Linux):
+For Mac: *sudo brew install cmake* or *sudo port install cmake*
+For Linux: *sudo apt-get install cmake*
+
+For Windows make sure that CMake has been added to the PATH system variable. If not, uninstall it, run the setup again and make sure to check the box which adds CMake to the PATH variable automatically. 
 
 * Visual Studio Code
 Download Visual Studio (VS) Code from : https://code.visualstudio.com
